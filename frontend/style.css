@@ -1,0 +1,53 @@
+body {
+    margin: auto;
+    color: rgb(230, 34, 34);
+    background-image: url('img/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;  
+}
+
+#mainContent {
+    float: right;
+    position: relative;
+    width: 560px;
+    padding: 94px;
+    margin: auto;
+}
+
+button {
+    background-color: rgb(230, 34, 34);
+    margin: 10px;
+    border-style: none;
+    border-radius: 5px;
+    padding: 7px;
+    color: white;
+}
+
+#gifContainer {
+    width: 100%;
+    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+    display: none;
+    position: fixed; /* Lo mantiene fijo en la pantalla */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+/* Ajustar el GIF al tamaño de la pantalla */
+#gifContent {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+#hint {
+    margin-top: 20px; /* Espacio entre el GIF y el mensaje */
+    font-size: 1.5rem;
+    color: rgb(230, 34, 34);
+    text-align: center; /* Centra el texto */
+}

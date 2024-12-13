@@ -5,8 +5,7 @@ async function checkCode() {
     const gifContainer = document.getElementById("gifContainer");
     const gifContent = document.getElementById("gifContent");
 
-    // Enviar la solicitud al backend para verificar el código
-    const response = await fetch("http://127.0.0.1:8000/verify_code/", {
+    const response = await fetch("https://escape-room-37to.onrender.com/verify_code/", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -18,14 +17,12 @@ async function checkCode() {
 
     if (result.result === "success") {
         responseMessage.textContent = result.message;
-        // Cambiar el fondo a blanco y ocultar el contenido principal
-        document.body.style.backgroundColor = "white";
-        mainContent.style.display = "none";  // Ocultar el contenido anterior
 
-        // Mostrar el GIF y el párrafo de pista
+        document.body.style.backgroundColor = "white";
+        mainContent.style.display = "none";
+
         gifContainer.style.display = "block";
-        hint.style.display = "block"; // Si quieres mostrar un mensaje adicional
-        // Agregar el GIF dinámicamente
+        hint.style.display = "block"; 
 
         gifContent.innerHTML = `<img src="${result.gif_url}" alt="GIF">`;        
     } else {

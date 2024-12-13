@@ -5,6 +5,7 @@ async function checkCode() {
     const gifContainer = document.getElementById("gifContainer");
     const gifContent = document.getElementById("gifContent");
 
+    // Enviar la solicitud al backend para verificar el código
     const response = await fetch("https://escape-room-37to.onrender.com/verify_code/", {
         method: "POST",
         headers: {
@@ -22,9 +23,10 @@ async function checkCode() {
         mainContent.style.display = "none";
 
         gifContainer.style.display = "block";
-        hint.style.display = "block"; 
+        hint.style.display = "block";
 
-        gifContent.innerHTML = `<img src="${result.gif_url}" alt="GIF">`;        
+        hint.textContent = result.hint;
+        gifContent.innerHTML = `<img src="${result.gif_url}" alt="GIF">`;    
     } else {
         responseMessage.textContent = result.message;
     }

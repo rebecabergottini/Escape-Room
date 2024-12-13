@@ -7,7 +7,7 @@ app = FastAPI()
 # CORS para permitir solicitudes desde el frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://escape-room-1.onrender.com"],  # Permite solicitudes desde cualquier origen
+    allow_origins=["*"],  # Permite solicitudes desde cualquier origen
     allow_credentials=True,
     allow_methods=["*"],  # Permite todos los métodos (GET, POST, OPTIONS, etc.)
     allow_headers=["*"],  # Permite cualquier cabecera
@@ -26,10 +26,11 @@ async def verify_code(request: CodeRequest):
     if request.code.lower().strip() == correct_code:
         return {
             "result": "success",
-            "gif_url": "https://media1.tenor.com/m/Lel8LSLIzYEAAAAd/christmas-gifts-homer-simpson.gif"
+            "gif_url": "https://media1.tenor.com/m/Lel8LSLIzYEAAAAd/christmas-gifts-homer-simpson.gif",
+            "hint": "Si la siguiente pista quieres encontrar, busca lo que Homer acaba de robar."
         }
     else:
         return {
             "result": "error",
-            "message": "¡Código incorrecto! Intenta de nuevo..."
+            "message": "¡Código incorrecto! Inténtalo de nuevo..."
         }

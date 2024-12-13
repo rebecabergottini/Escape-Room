@@ -6,48 +6,109 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;  
+    height: 100vh;
 }
 
 #mainContent {
     float: right;
     position: relative;
     width: 560px;
-    padding: 94px;
+    padding: 70px;
     margin: auto;
 }
 
 button {
     background-color: rgb(230, 34, 34);
-    margin: 10px;
+    margin: 3px;
     border-style: none;
     border-radius: 5px;
-    padding: 7px;
+    padding: 5px;
     color: white;
+    font-size: 12px;
 }
 
 #gifContainer {
     width: 100%;
-    height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
-    display: none;
-    position: fixed; /* Lo mantiene fijo en la pantalla */
-    top: 0;
-    left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
+    height: 100vh;
+    position: fixed;
+    background-color: rgb(245 214 186);
 }
 
-/* Ajustar el GIF al tamaño de la pantalla */
 #gifContent {
     display: flex;
     justify-content: center;
-    padding: 50px;
 }
 
 #hint {
-    margin-top: 20px; /* Espacio entre el GIF y el mensaje */
+    margin-top: 20px; 
     font-size: 1.5rem;
     color: rgb(230, 34, 34);
-    text-align: center; /* Centra el texto */
+    text-align: center;
+}
+
+/* Media Query para PC */
+@media (min-width: 1025px) {
+
+    #mainContent {
+        width: 51%;
+        padding: 0;
+        margin: 11vh;
+        left: 50px;
+    }
+
+    #gifContent {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+
+/* Media Querie para tablets */
+@media (min-width: 401px) and (max-width: 1024px) {
+
+    body {
+        background-image: url('img/fondo-derecho.jpg');
+        background-color: rgb(255, 208, 150);
+    }
+
+    #mainContent {
+        padding: 0;
+        width: 51%;
+        float: left;
+        margin: 9vh;
+    }
+    
+    button {
+        padding: 4px 10px;
+    }
+
+}
+
+/* Media Querie para móviles*/
+@media (max-width: 400px) {
+    
+    body {
+        background-image: none;
+        background-color: rgb(245 214 186);
+    }
+
+    #mainContent {
+        width: 90%;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: flex-start;
+    }
+    
+    button {
+        padding: 5px 10px;
+        font-size: 12px;
+        margin: 7px;
+    }
+
+    img {
+        width: 230px;
+    }
 }

@@ -26,7 +26,9 @@ async function checkCode() {
         hint.style.display = "block";
 
         hint.textContent = result.hint;
+        
         gifContent.innerHTML = `<img src="${result.gif_url}" alt="GIF">`;    
+
     } else {
         responseMessage.textContent = result.message;
     }

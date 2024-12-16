@@ -1,43 +1,89 @@
 body {
-    margin: auto;
-    color: rgb(230, 34, 34);
-    background-image: url('img/fondo.jpg');
-    background-size: cover;
+    margin: 0; /* Eliminar márgenes del navegador */
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    min-height: 100vh; /* Altura completa de la ventana */
+    background-image: url("img/fondo-derecho.jpg");
+    background-size: cover; /* La imagen cubre todo el fondo */
     background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;  
-    height: 100vh;
+    text-align: center;
 }
 
 #mainContent {
-    float: right;
-    position: relative;
-    width: 560px;
-    padding: 70px;
-    margin: auto;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    text-align: center;
 }
 
 button {
-    background-color: rgb(230, 34, 34);
-    margin: 3px;
-    border-style: none;
+    background: linear-gradient(135deg, #e63946, #bf2026);
+    color: #ffffff;
+    padding: 0.5rem 1.4rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #bf2026, #e63946);
+}
+
+input[type="text"] {
+    padding: 0.5rem;
+    border: 2px solid #b8860b;
     border-radius: 5px;
-    padding: 5px;
-    color: white;
-    font-size: 12px;
+    font-size: 1rem;
+    margin: 1rem 0;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: #024a2b;
+    box-shadow: 0 0 5px #024a2b;
+}
+
+h1 {
+    font-family: "Mountains of Christmas", serif;
+    font-style: normal;
+    color: #e63946;
+    font-size: 2.5rem; 
+    text-align: center;
+    text-shadow: 2px 2px 4px #b8860b;
+    font-weight: bold;
+    margin: 0;
+    width: 100%;
+}
+
+p {
+    font-family: "Roboto Mono", monospace;
+    font-style: normal;
+    width: 80%; /* El ancho es el 80% del contenedor */
+    margin: 0 auto;
+    color: #e63946; /* Rojo navideño */
+    text-shadow: 
+        2px 2px 4px #b8860b; /* Dorado oscuro */
+    text-align: center;
 }
 
 #gifContainer {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    background-color: rgb(245 214 186);
-}
-
-#gifContent {
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(245, 214, 186);
+    background-image: none;
 }
+
 
 #hint {
     margin-top: 20px; 
@@ -46,69 +92,134 @@ button {
     text-align: center;
 }
 
-/* Media Query para PC */
-@media (min-width: 1025px) {
+/* Escalabilidad general */
+img {
+    max-width: 100%; /* Imagen nunca más grande que el contenedor */
+    height: auto; /* Mantén proporciones */
+}
 
-    #mainContent {
-        width: 51%;
-        padding: 0;
-        margin: 11vh;
-        left: 50px;
-    }
 
-    #gifContent {
+/* Media Query para pantallas pequeñas (hasta 600px de ancho) */
+@media (max-width: 600px) {
+    body {
         display: flex;
         justify-content: center;
+        align-items: center;
         padding: 0;
-    }
-}
-
-
-/* Media Querie para tablets */
-@media (min-width: 401px) and (max-width: 1024px) {
-
-    body {
-        background-image: url('img/fondo-derecho.jpg');
-        background-color: rgb(255, 208, 150);
     }
 
     #mainContent {
-        padding: 0;
-        width: 51%;
+        width: 90%; /* Ajustar el ancho para pantallas pequeñas */
+        padding: 1.5rem 2rem; /* Reducir el padding */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Reducir tamaño de fuente */
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1rem; /* Reducir tamaño de fuente para párrafos */
+        width: 90%; /* Ajustar el ancho */
+        padding: 5px;
+        
+    }
+
+    button {
+        font-size: 0.8rem; /* Reducir tamaño del botón */
+        padding: 0.4rem 0.9rem;
+    }
+
+    input[type="text"] {
+        font-size: 0.7rem; /* Reducir tamaño de texto */
+        padding: 0.3rem;
+    }
+
+    #hint {
+        font-size: 1.5rem; /* Ajustar tamaño de texto */
+    }
+
+}
+
+/* Media Query para tabletas (601px a 1024px de ancho) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        min-height: 100vh;
+        background-size: cover;
         float: left;
-        margin: 9vh;
-    }
-    
-    button {
-        padding: 4px 10px;
-    }
-
-}
-
-/* Media Querie para móviles*/
-@media (max-width: 400px) {
-    
-    body {
-        background-image: none;
-        background-color: rgb(245 214 186);
     }
 
     #mainContent {
-        width: 90%;
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        align-items: flex-start;
-    }
-    
-    button {
-        padding: 5px 10px;
-        font-size: 12px;
-        margin: 7px;
+        margin: 0 auto;
+        padding: 2rem 3rem;
+        text-align: center;
     }
 
-    img {
-        width: 230px;
+    h1 {
+        font-size: 2.5rem; /* Reducir tamaño de fuente */
+    }
+
+    p {
+        font-size: 1.2rem; /* Ajustar tamaño de fuente */
+        width: 80%;
+        padding: 5px;
+        text-align: center;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    input[type="text"] {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    #hint {
+        font-size: 1.8rem; /* Ajuste de tamaño de texto */
+        margin-bottom: 10px;
+    }
+}
+
+/* Media Query para pantallas grandes (mayores a 1024px de ancho) */
+@media (min-width: 1025px) {
+    body {
+        min-height: 100vh;
+        background-size: cover;
+        float: left;
+    }
+
+    #mainContent {
+        margin: 0 auto;
+        padding: 1.1rem 1.1rem;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3rem; /* Título más grande */
+    }
+
+    p {
+        font-size: 1rem; /* Párrafos más grandes */
+        width: 80%;
+        padding: 5px;
+        text-align: center;
+        padding-right: 100px;
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+
+    input[type="text"] {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+
+    #hint {
+        font-size: 2rem;
     }
 }

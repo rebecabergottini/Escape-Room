@@ -34,3 +34,7 @@ async def verify_code(request: CodeRequest):
             "result": "error",
             "message": "¡Código incorrecto! Inténtalo de nuevo..."
         }
+
+@app.get("/ping")
+async def ping():
+    return {"status": "ok", "message": "Servidor activo"}

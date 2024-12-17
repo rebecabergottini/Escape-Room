@@ -7,7 +7,7 @@ app = FastAPI()
 # CORS para permitir solicitudes desde el frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://escape-room-1.onrender.com"],  # Permite solicitudes desde cualquier origen
+    allow_origins=["https://escape-room-1.onrender.com "],  # Permite solicitudes desde cualquier origen 
     allow_credentials=True,
     allow_methods=["*"],  # Permite todos los métodos (GET, POST, OPTIONS, etc.)
     allow_headers=["*"],  # Permite cualquier cabecera
@@ -23,6 +23,7 @@ class CodeRequest(BaseModel):
 # Endpoint para verificar el código
 @app.post("/verify_code/")
 async def verify_code(request: CodeRequest):
+    # Verifica si el código enviado es correcto
     if request.code.lower().strip() == correct_code:
         return {
             "result": "success",
@@ -30,6 +31,7 @@ async def verify_code(request: CodeRequest):
             "hint": "Si la siguiente pista quieres encontrar, busca lo que Homer acaba de robar."
         }
     else:
+        # Si el código es incorrecto, devuelve el mensaje de error
         return {
             "result": "error",
             "message": "¡Código incorrecto! Inténtalo de nuevo..."
@@ -37,7 +39,7 @@ async def verify_code(request: CodeRequest):
 
 # Endpoint para ping (verificar que el servidor está activo)
 @app.get("/ping")
-@app.head("/ping")  # Añadimos también el método HEAD aquí
+@app.head("/ping")
 async def ping():
     return {
         "status": "ok", "message": "Servidor activo"

@@ -1,12 +1,12 @@
 body {
-    margin: 0; /* Eliminar márgenes del navegador */
+    margin: 0; /* Elimina márgenes predeterminados del navegador */
     padding: 0;
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
-    min-height: 100vh; /* Altura completa de la ventana */
-    background-image: url("img/fondo-derecho.jpg");
-    background-size: cover; /* La imagen cubre todo el fondo */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    min-height: 100vh; /* Establece la altura mínima del body al 100% de la ventana */
+    background-image: url("img/fondo.png");
+    background-size: cover; /* Hace que la imagen de fondo cubra todo el área disponible */
     background-repeat: no-repeat;
     text-align: center;
 }
@@ -32,14 +32,14 @@ button {
 }
 
 button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-3px); /* Eleva ligeramente el botón al hacer hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     background: linear-gradient(135deg, #bf2026, #e63946);
 }
 
 input[type="text"] {
     padding: 0.5rem;
-    border: 2px solid #b8860b;
+    border: 2px solid #333333;
     border-radius: 5px;
     font-size: 1rem;
     margin: 1rem 0;
@@ -48,16 +48,16 @@ input[type="text"] {
 
 input[type="text"]:focus {
     border-color: #024a2b;
-    box-shadow: 0 0 5px #024a2b;
+    box-shadow: 0 0 5px #024a2b; /* Añade sombra verde al enfocarse en el input */
 }
 
 h1 {
     font-family: "Mountains of Christmas", serif;
     font-style: normal;
     color: #e63946;
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
     text-align: center;
-    text-shadow: 2px 2px 4px #b8860b;
+    text-shadow: 2px 2px 8px rgba(184, 134, 11, 0.6); /* Añade sombra dorada al texto */
     font-weight: bold;
     margin: 0;
     width: 100%;
@@ -66,79 +66,85 @@ h1 {
 p {
     font-family: "Roboto Mono", monospace;
     font-style: normal;
-    width: 80%; /* El ancho es el 80% del contenedor */
+    width: 80%; /* Limita el ancho del párrafo al 80% */
     margin: 0 auto;
-    color: #e63946; /* Rojo navideño */
-    text-shadow: 
-        2px 2px 4px #b8860b; /* Dorado oscuro */
+    color: #333333;
     text-align: center;
 }
 
 #gifContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centra el contenido del contenedor */
+    align-items: center; /* Centra el contenido verticalmente */
     width: 100%;
-    height: 100vh;
-    background-color: rgb(245, 214, 186);
-    background-image: none;
+    height: 100vh; /* Establece la altura del contenedor al 100% de la ventana */
+    position: relative;
 }
 
-
 #hint {
-    margin-top: 20px; 
+    margin-top: 20px;
     font-size: 1.5rem;
-    color: rgb(230, 34, 34);
+    color: #333333;
     text-align: center;
 }
 
 /* Escalabilidad general */
 img {
-    max-width: 100%; /* Imagen nunca más grande que el contenedor */
-    height: auto; /* Mantén proporciones */
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
-
-
 /* Media Query para pantallas pequeñas (hasta 600px de ancho) */
 @media (max-width: 600px) {
     body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
         padding: 0;
+        margin: 0; /* Elimina márgenes predeterminados del navegador */
+        display: flex;
+        justify-content: center; /* Centra horizontalmente el contenido */
+        align-items: center; /* Centra verticalmente el contenido */
+        min-height: 100vh; /* Establece la altura mínima del body al 100% de la ventana */
+        background-image: url("img/fondo-movil.png");
+        background-size: cover; /* Hace que la imagen de fondo cubra todo el área disponible */
+        background-repeat: no-repeat;
+        text-align: center;
     }
 
     #mainContent {
-        width: 90%; /* Ajustar el ancho para pantallas pequeñas */
-        padding: 1.5rem 2rem; /* Reducir el padding */
+        width: 90%; /* Ajusta el ancho para pantallas pequeñas */
+        padding: 1.5rem 2rem; /* Reduce el padding */
     }
 
     h1 {
-        font-size: 1.8rem; /* Reducir tamaño de fuente */
+        font-size: 1.8rem; /* Reduce el tamaño de fuente en pantallas pequeñas */
         margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     p {
-        font-size: 1rem; /* Reducir tamaño de fuente para párrafos */
-        width: 90%; /* Ajustar el ancho */
+        font-size: 1rem; /* Ajusta el tamaño de fuente en pantallas pequeñas */
+        width: 90%; /* Ajusta el ancho del párrafo */
         padding: 5px;
-        
     }
 
     button {
-        font-size: 0.8rem; /* Reducir tamaño del botón */
+        font-size: 0.8rem; /* Reduce el tamaño del botón en pantallas pequeñas */
         padding: 0.4rem 0.9rem;
     }
 
     input[type="text"] {
-        font-size: 0.7rem; /* Reducir tamaño de texto */
+        font-size: 0.7rem; /* Reduce el tamaño de texto en pantallas pequeñas */
         padding: 0.3rem;
     }
 
     #hint {
-        font-size: 1.5rem; /* Ajustar tamaño de texto */
+        font-size: 1.2rem; /* Ajusta el tamaño de la fuente para pantallas más pequeñas */
+        margin-top: 15px; /* Reduce el margen superior */
+        margin-bottom: 10px;
     }
 
+    #gifContainer {
+        height: auto; /* Ajusta la altura en pantallas pequeñas */
+        padding: 10px; /* Añade un pequeño relleno al contenedor */
+    }
 }
 
 /* Media Query para tabletas (601px a 1024px de ancho) */
@@ -146,7 +152,6 @@ img {
     body {
         min-height: 100vh;
         background-size: cover;
-        float: left;
     }
 
     #mainContent {
@@ -156,29 +161,33 @@ img {
     }
 
     h1 {
-        font-size: 2.5rem; /* Reducir tamaño de fuente */
+        font-size: 2.5rem; /* Ajusta el tamaño de fuente para tabletas */
     }
 
     p {
-        font-size: 1.2rem; /* Ajustar tamaño de fuente */
-        width: 80%;
+        font-size: 1.2rem; /* Ajusta el tamaño de fuente para tabletas */
+        width: 80%; /* Ajusta el ancho del párrafo */
         padding: 5px;
-        text-align: center;
     }
 
     button {
-        font-size: 1rem;
+        font-size: 1rem; /* Ajusta el tamaño del botón */
         padding: 0.5rem 1.2rem;
     }
 
     input[type="text"] {
-        font-size: 1rem;
+        font-size: 1rem; /* Ajusta el tamaño del texto del input */
         padding: 0.5rem;
     }
 
     #hint {
-        font-size: 1.8rem; /* Ajuste de tamaño de texto */
+        font-size: 1.8rem; /* Ajuste de tamaño de texto para tabletas */
         margin-bottom: 10px;
+    }
+
+    #gifContainer {
+        height: auto; /* Ajusta la altura en pantallas pequeñas */
+        padding: 10px; /* Añade un pequeño relleno al contenedor */
     }
 }
 
@@ -187,7 +196,6 @@ img {
     body {
         min-height: 100vh;
         background-size: cover;
-        float: left;
     }
 
     #mainContent {
@@ -197,29 +205,33 @@ img {
     }
 
     h1 {
-        font-size: 2.2rem;
-        margin-bottom: 10px;    }
+        font-size: 2.3rem; /* Ajuste de tamaño de fuente para pantallas grandes */
+        margin-top: 30px;
+    }
 
     p {
-        font-size: 1rem; /* Párrafos más grandes */
-        width: 80%;
-        padding: 5px;
-        text-align: center;
-        padding-right: 100px;
-        margin-bottom: 20px;
+        font-size: 1rem;
+        width: 80%; /* Ajusta el ancho del párrafo */
+        padding: 10px;
     }
 
     button {
-        font-size: 1rem;
+        font-size: 1rem; /* Ajuste del tamaño del botón */
         padding: 0.5rem 1rem;
     }
 
     input[type="text"] {
-        font-size: 1rem;
+        font-size: 1rem; /* Ajusta el tamaño del texto en el input */
         padding: 0.3rem;
     }
 
     #hint {
-        font-size: 2rem;
+        font-size: 2rem; /* Ajuste del tamaño de la fuente en pantallas grandes */
+        margin-top: 15px; /* Reduce el margen superior */
+    }
+
+    #gifContainer {
+        height: auto; /* Ajusta la altura en pantallas pequeñas */
+        padding: 10px; /* Añade un pequeño relleno al contenedor */
     }
 }

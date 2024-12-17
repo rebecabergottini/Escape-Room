@@ -7,38 +7,46 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
-                
     <title>Escape Room</title>
 </head>
 <body>
     <div id="mainContent">
+        <!-- Título principal de la página -->
         <h1>¡Bienvenido al siguiente paso del Escape Room de Navidad!</h1>
+        
+        <!-- Descripción inicial del juego -->
         <p>Resuelve la adivinanza para encontrar el código que te llevará a la siguiente pista:</p>
 
+        <!-- Pistas del acertijo -->
         <p>
             En las noches más oscuras, cuando el frío se siente más profundo y la quietud lo envuelve todo, tres señales misteriosas se cruzan en el camino de quienes buscan entender los secretos del universo. Ninguna de estas señales es lo que parece a simple vista, y solo aquellos con ojos atentos y mentes abiertas podrán reconocer lo que realmente importa.
             ¿Serás capaz de descifrar lo que se esconde detrás de estas pistas?
         </p>
 
+        <!-- Pistas adicionales del acertijo -->
         <p>
             "Uno es tan brillante como la luz de las estrellas,
             otro susurra sin ser oído, pero su esencia llena el aire,
             y el tercero guarda la memoria de lo que el tiempo olvida."
         </p>
 
+        <!-- Campo de entrada de texto para el código -->
         <p>Introduce la respuesta del acertijo para continuar:</p>
 
-        <input type="text" id="codeInput">
-        <button onclick="checkCode()">Enviar</button>
+        <input type="text" id="codeInput"> <!-- Campo de texto donde se escribe la respuesta -->
+        <button onclick="checkCode()">Enviar</button> <!-- Botón para enviar el código -->
 
+        <!-- Mensaje de respuesta que muestra el resultado de la verificación -->
         <p id="responseMessage"></p>
     </div>
 
+    <!-- Contenedor para el GIF y pista cuando el código es correcto -->
     <div id="gifContainer" style="display: none;">
-        <p id="hint" style="display: none;"></p>
-        <div id="gifContent"></div>
+        <p id="hint" style="display: none;"></p> <!-- Pista a mostrar al usuario -->
+        <div id="gifContent"></div> <!-- Contenedor donde se mostrará el GIF -->
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Archivo JS donde se manejan las interacciones -->
 </body>
 </html>
+

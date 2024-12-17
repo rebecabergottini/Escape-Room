@@ -7,7 +7,7 @@ app = FastAPI()
 # CORS para permitir solicitudes desde el frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://escape-room-1.onrender.com "],  # Permite solicitudes desde cualquier origen 
+    allow_origins=["https://escape-room-1.onrender.com"],  # Permite solicitudes desde cualquier origen 
     allow_credentials=True,
     allow_methods=["*"],  # Permite todos los métodos (GET, POST, OPTIONS, etc.)
     allow_headers=["*"],  # Permite cualquier cabecera

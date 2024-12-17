@@ -35,6 +35,10 @@ async def verify_code(request: CodeRequest):
             "message": "¡Código incorrecto! Inténtalo de nuevo..."
         }
 
+# Endpoint para ping (verificar que el servidor está activo)
 @app.get("/ping")
+@app.head("/ping")  # Añadimos también el método HEAD aquí
 async def ping():
-    return {"status": "ok", "message": "Servidor activo"}
+    return {
+        "status": "ok", "message": "Servidor activo"
+    }
